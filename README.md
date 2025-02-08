@@ -18,7 +18,7 @@ npm install
 ## Running the App
 
 ```bash
-npm run android  # Run on Android emulator
+npm run android
 ```
 
 ## Steps to Reproduce
@@ -36,3 +36,8 @@ npm run android  # Run on Android emulator
 
 - Normal queries work as expected
 - (Bug will be reproduced after adding stream directive)
+
+## Checking Errors on Android Device
+
+To check errors on a physical Android device, use logcat
+This will show all React Native related errors and logs from your device.
