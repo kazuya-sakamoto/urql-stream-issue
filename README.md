@@ -1,50 +1,38 @@
-# Welcome to your Expo app 👋
+# urql-stream-issue
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Expo/React Native 環境での urql のストリームディレクティブ使用時のバグ再現リポジトリ
 
-## Get started
+## 環境
 
-1. Install dependencies
+- Expo SDK: 52.0.31
+- React Native: 0.76.7
+- urql: latest
+- @urql/exchange-context: latest
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## セットアップ
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 実行方法
 
-## Learn more
+```bash
+npm run android  # Androidエミュレータで実行
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## バグの再現手順
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. アプリを起動
+2. "Execute Query" ボタンを押して GraphQL クエリを実行
+3. 複数回ボタンを押すことで、クエリが正常に再実行されることを確認
 
-## Join the community
+## 期待される動作
 
-Join our community of developers creating universal apps.
+- GraphQL クエリが正常に実行され、結果が表示される
+- ボタンを押すたびに新しいリクエストが実行される
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 実際の動作
+
+- 通常のクエリは正常に動作
+- （stream ディレクティブ追加後にバグが再現される予定）
