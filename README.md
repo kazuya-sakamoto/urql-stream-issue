@@ -1,38 +1,38 @@
 # urql-stream-issue
 
-Expo/React Native 環境での urql のストリームディレクティブ使用時のバグ再現リポジトリ
+A reproduction repository for a bug when using the stream directive with urql in an Expo/React Native environment.
 
-## 環境
+## Environment
 
 - Expo SDK: 52.0.31
 - React Native: 0.76.7
 - urql: latest
 - @urql/exchange-context: latest
 
-## セットアップ
+## Setup
 
 ```bash
 npm install
 ```
 
-## 実行方法
+## Running the App
 
 ```bash
-npm run android  # Androidエミュレータで実行
+npm run android  # Run on Android emulator
 ```
 
-## バグの再現手順
+## Steps to Reproduce
 
-1. アプリを起動
-2. "Execute Query" ボタンを押して GraphQL クエリを実行
-3. 複数回ボタンを押すことで、クエリが正常に再実行されることを確認
+1. Launch the app
+2. Press the "Execute Query" button to run the GraphQL query
+3. Verify that the query is re-executed correctly by pressing the button multiple times
 
-## 期待される動作
+## Expected Behavior
 
-- GraphQL クエリが正常に実行され、結果が表示される
-- ボタンを押すたびに新しいリクエストが実行される
+- GraphQL query executes successfully and displays results
+- Each button press triggers a new request
 
-## 実際の動作
+## Actual Behavior
 
-- 通常のクエリは正常に動作
-- （stream ディレクティブ追加後にバグが再現される予定）
+- Normal queries work as expected
+- (Bug will be reproduced after adding stream directive)
